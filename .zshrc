@@ -90,11 +90,36 @@ export NVM_DIR="$HOME/.nvm"
 # # Automatically added by the Platform.sh CLI installer
 # export PATH="/Users/stemount/.platformsh/bin:$PATH"
 # . '/Users/stemount/.platformsh/shell-config.rc' 2>/dev/null || true
-export PATH="/usr/local/sbin:$PATH"
+export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 
 export PATH="/usr/local/opt/python/libexec/bin:$PATH"
 
-export PATH="$(brew --prefix homebrew/php/php71)/bin:$PATH"
+# export PATH="$(brew --prefix homebrew/php/php71)/bin:$PATH"
 
 # # added by travis gem
 [ -f /Users/stemount/.travis/travis.sh ] && source /Users/stemount/.travis/travis.sh
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
+
+# old: /Applications/MAMP/bin/php/php7.0.22/bin
+# export MAMP_PHP=/Applications/MAMP/bin/php/php7.1.8/bin
+# export PATH="$MAMP_PHP:$PATH"
+# export PATH=$PATH:/Applications/MAMP/Library/bin
+export PATH=$PATH:$HOME/.composer/vendor/bin
+export PHP_OPTIONS='-d memory_limit="512M"'
+
+function homestead-noagent () {
+cd ~/projects/noagent/homestead && vagrant $*
+cd -
+}
+
+function mamp-php () {
+	export PATH=/Applications/MAMP/bin/php/php7.1.12/bin:$PATH
+}
+
+alias ic='cd ~/Library/Mobile\ Documents/com~apple~CloudDocs'

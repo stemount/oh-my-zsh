@@ -7,3 +7,5 @@ ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg_bold[blue]%}git:(%{$fg[red]%}"
 ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%} "
 ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[blue]%}) %{$fg[yellow]%}✗"
 ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[blue]%})"
+
+alias parjira="open https://regulatorydelivery.atlassian.net/secure/RapidBoard.jspa?rapidView=4\&projectKey=PAR\&modal=detail\&selectedIssue=$(git_prompt_info)"
